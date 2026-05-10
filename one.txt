@@ -1,0 +1,139 @@
+<!-- File Name: index.php -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+            border: 3px solid black;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .info {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: green;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1><u>My Personal Profile</u></h1>
+
+    <!-- Profile Image -->
+    <img src="profile.jpg" alt="Profile Photo" width="200" height="200">
+
+    <div class="info">
+
+        <h2>Personal Information</h2>
+
+        <p>
+            <b>Name:</b> Shilpa Gerkar <br>
+            <b>Course:</b> Bachelor of Computer enginnering(BE) <br>
+            <b>College:</b> Amrutvahini college of Engineering <br>
+            <b>Email:</b> shilpa@example.com <br>
+            <b>City:</b> Selu, Maharashtra
+        </p>
+
+        <h2>About Me</h2>
+
+        <p>
+            Hello! My name is <b>Shilpa Gerkar</b>.  
+            I am interested in <i>Web Development</i>, 
+            <mark>Programming</mark>, and Database Management Systems.
+        </p>
+
+        <h2>My Hobbies</h2>
+
+        <p>
+            • Reading Books <br>
+            • Coding <br>
+            • Listening to Music <br>
+            • Travelling
+        </p>
+
+        <h2>Useful Links</h2>
+
+        <p>
+            Visit My Favorite Website:
+            <a href="https://www.google.com" target="_blank">Google</a>
+        </p>
+
+    </div>
+
+    <!-- PHP Code -->
+    <div class="footer">
+
+        <?php
+            date_default_timezone_set("Asia/Kolkata");
+
+            echo "<h3>Welcome to My Profile Page!</h3>";
+
+            echo "Current Date: " . date("d-m-Y") . "<br>";
+
+            echo "Current Time: " . date("h:i:s A");
+        ?>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!-- File Name: movie.php -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Booking Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type=text],
+        input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: darkblue;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+    </style>
+
+    <script>
+
+        function confirmBooking() {
+
+            let confirmBox = confirm(
+                "Are you sure you want to book the movie ticket?"
+            );
+
+            if (confirmBox == true) {
+
+                alert("Movie Ticket Booked Successfully!");
+
+                return true;
+            }
+
+            else {
+
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Movie Booking Webpage</h1>
+
+    <!-- Nested Table -->
+
+    <table>
+
+        <tr>
+            <th>Movie Name</th>
+            <th>Show Details</th>
+        </tr>
+
+        <tr>
+            <td>Avengers</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Time</th>
+                        <th>Screen</th>
+                    </tr>
+
+                    <tr>
+                        <td>10:00 AM</td>
+                        <td>Screen 1</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>Pushpa 2</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Time</th>
+                        <th>Screen</th>
+                    </tr>
+
+                    <tr>
+                        <td>2:00 PM</td>
+                        <td>Screen 2</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- Booking Form -->
+
+    <form method="POST" onsubmit="return confirmBooking()">
+
+        <label><b>Customer Name:</b></label>
+        <input type="text" name="customer" required>
+
+        <label><b>Select Movie:</b></label>
+
+        <input type="radio" name="movie" value="Avengers"> Avengers
+
+        <input type="radio" name="movie" value="Pushpa 2"> Pushpa 2
+
+        <br><br>
+
+        <label><b>Number of Tickets:</b></label>
+        <input type="number" name="tickets" required>
+
+        <input type="submit" value="Book Ticket">
+
+    </form>
+
+    <!-- PHP POST Method -->
+
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $customer = $_POST['customer'];
+
+        $movie = $_POST['movie'];
+
+        $tickets = $_POST['tickets'];
+
+        echo "<div class='result'>";
+
+        echo "<h3>Booking Details</h3>";
+
+        echo "Customer Name: " . $customer . "<br>";
+
+        echo "Movie Name: " . $movie . "<br>";
+
+        echo "Number of Tickets: " . $tickets;
+
+        echo "</div>";
+    }
+
+    ?>
+
+</div>
+
+</body>
+</html>

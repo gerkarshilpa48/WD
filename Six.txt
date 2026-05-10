@@ -1,0 +1,201 @@
+<!-- File Name: course.php -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Course Enrollment</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 8px;
+        }
+
+        input[type=submit] {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: darkblue;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Engineering Course Enrollment Page</h2>
+
+    <!-- Nested Table -->
+
+    <table>
+
+        <tr>
+            <th>Engineering Course</th>
+            <th>Course Details</th>
+        </tr>
+
+        <tr>
+            <td>Computer Engineering</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Duration</th>
+                        <th>Fees</th>
+                    </tr>
+
+                    <tr>
+                        <td>4 Years</td>
+                        <td>₹90,000</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>Information Technology</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Duration</th>
+                        <th>Fees</th>
+                    </tr>
+
+                    <tr>
+                        <td>4 Years</td>
+                        <td>₹85,000</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- Hyperlink -->
+
+    <center>
+        <a href="https://avcoe.org/" target="_blank">
+            Visit College Website
+        </a>
+    </center>
+
+    <br><br>
+
+    <!-- Enrollment Form -->
+
+    <form method="POST">
+
+        <label><b>Student Name:</b></label><br><br>
+        <input type="text" name="studentname" required>
+
+        <br><br>
+
+        <label><b>Select Course:</b></label><br><br>
+
+        <input type="radio" name="course" value="Computer Engineering"> Computer Engineering
+
+        <input type="radio" name="course" value="Information Technology"> Information Technology
+
+        <br><br>
+
+        <input type="submit" value="Enroll">
+
+    </form>
+
+    <!-- PHP POST Processing -->
+
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $student = $_POST['studentname'];
+        $course = $_POST['course'];
+
+        echo "<div class='result'>";
+
+        echo "<h3>Enrollment Details</h3>";
+
+        echo "Student Name: " . $student . "<br>";
+        echo "Enrolled Course: " . $course;
+
+        echo "</div>";
+    }
+
+    ?>
+
+</div>
+
+</body>
+</html>

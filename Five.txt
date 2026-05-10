@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            margin: auto;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: darkblue;
+        }
+
+        .radio-group {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script>
+
+        function validateForm() {
+
+            let feedback = document.forms["feedbackForm"]["feedback"].value;
+
+            let rating = document.querySelector('input[name="rating"]:checked');
+
+            if (feedback == "") {
+                alert("Please enter feedback");
+                return false;
+            }
+
+            if (rating == null) {
+                alert("Please select rating");
+                return false;
+            }
+
+            let confirmSubmit = confirm("Are you sure you want to submit feedback?");
+
+            if (confirmSubmit == true) {
+                alert("Feedback Submitted Successfully!");
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Feedback Form</h2>
+
+    <form name="feedbackForm" onsubmit="return validateForm()">
+
+        <label>Enter Your Feedback:</label><br>
+
+        <textarea name="feedback"></textarea>
+
+        <br><br>
+
+        <label>Rate Our Service:</label>
+
+        <div class="radio-group">
+            <input type="radio" name="rating" value="Excellent"> Excellent
+            <input type="radio" name="rating" value="Good"> Good
+            <input type="radio" name="rating" value="Average"> Average
+        </div>
+
+        <input type="submit" value="Submit Feedback">
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

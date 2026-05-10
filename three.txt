@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Information</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            background-color: white;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        .department {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+            color: darkred;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Amrutvahini College of Engineering</h1>
+
+    <!-- College Image -->
+    <center>
+        <img src="college.jpg" width="300" height="200" alt="College Image">
+    </center>
+
+    <br>
+
+    <!-- Nested Table -->
+    <table>
+
+        <tr>
+            <th>Department</th>
+            <th>Details</th>
+        </tr>
+
+        <tr>
+            <td>Computer Engineering</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Course</th>
+                        <th>Duration</th>
+                    </tr>
+
+                    <tr>
+                        <td>B.E Computer</td>
+                        <td>4 Years</td>
+                    </tr>
+
+                    <tr>
+                        <td>M.E Computer</td>
+                        <td>2 Years</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>Information Technology</td>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+                        <th>Course</th>
+                        <th>Duration</th>
+                    </tr>
+
+                    <tr>
+                        <td>B.E IT</td>
+                        <td>4 Years</td>
+                    </tr>
+
+                    <tr>
+                        <td>M.E IT</td>
+                        <td>2 Years</td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- Hyperlink -->
+    <center>
+        <a href="https://avcoe.org/" target="_blank">
+            Visit College Website
+        </a>
+    </center>
+
+    <br>
+
+    <!-- DOM Output -->
+    <div class="department" id="deptName">
+        Department Name Will Display Here
+    </div>
+
+    <center>
+        <button onclick="showDepartment()">
+            Show Department
+        </button>
+    </center>
+
+    <!-- JavaScript DOM -->
+    <script>
+
+        function showDepartment() {
+
+            document.getElementById("deptName").innerHTML =
+            "Department of Computer Engineering";
+
+        }
+
+    </script>
+
+</body>
+</html>

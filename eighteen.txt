@@ -1,0 +1,180 @@
+<!-- File Name: admission.php -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Admission Webpage</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 450px;
+            background-color: white;
+            margin: auto;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type=text],
+        input[type=number] {
+
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+
+            width: 100%;
+            padding: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+
+            background-color: darkblue;
+        }
+
+        .result {
+
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Inline CSS -->
+    <h1 style="font-size:32px;">
+        School Admission Form
+    </h1>
+
+    <!-- Image -->
+
+    <center>
+        <img src="school.jpg"
+             width="250"
+             height="150"
+             alt="School Image">
+    </center>
+
+    <br>
+
+    <!-- Hyperlink -->
+
+    <center>
+        <a href="https://www.google.com"
+           target="_blank">
+
+           Visit School Website
+
+        </a>
+    </center>
+
+    <br><br>
+
+    <!-- Admission Form -->
+
+    <form method="POST">
+
+        <label>Student Name:</label>
+
+        <input type="text" name="name" required>
+
+        <label>Class:</label>
+
+        <input type="text" name="class" required>
+
+        <label>Age:</label>
+
+        <input type="number" name="age" required>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <!-- PHP String Functions -->
+
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $name = $_POST['name'];
+
+        $class = $_POST['class'];
+
+        $age = $_POST['age'];
+
+        echo "<div class='result'>";
+
+        echo "<h3>Student Details</h3>";
+
+        echo "Original Name: " . $name . "<br>";
+
+        echo "Uppercase Name: " .
+             strtoupper($name) . "<br>";
+
+        echo "Name Length: " .
+             strlen($name) . "<br>";
+
+        echo "Reversed Name: " .
+             strrev($name) . "<br>";
+
+        echo "Class: " . $class . "<br>";
+
+        echo "Age: " . $age;
+
+        echo "</div>";
+    }
+
+    ?>
+
+</div>
+
+</body>
+</html>

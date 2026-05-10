@@ -1,0 +1,163 @@
+<!-- File Name: restaurant.php -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .menu-box {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+
+        h3 {
+            color: darkred;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Restaurant Menu</h1>
+
+    <!-- Menu Table -->
+
+    <table>
+
+        <tr>
+            <th>Food Image</th>
+            <th>Food Item</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="pizza.jpg" width="120" height="100">
+            </td>
+
+            <td>Pizza</td>
+
+            <td>₹250</td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="burger.jpg" width="120" height="100">
+            </td>
+
+            <td>Burger</td>
+
+            <td>₹120</td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="pasta.jpg" width="120" height="100">
+            </td>
+
+            <td>Pasta</td>
+
+            <td>₹180</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- Hyperlink -->
+
+    <center>
+        <a href="https://www.zomato.com" target="_blank">
+            Order Food Online
+        </a>
+    </center>
+
+    <!-- PHP Array Program -->
+
+    <div class="menu-box">
+
+        <h3>Menu Items Using PHP Array</h3>
+
+        <?php
+
+        $menu = array(
+            "Pizza",
+            "Burger",
+            "Pasta",
+            "Sandwich",
+            "Cold Drink"
+        );
+
+        echo "<ul>";
+
+        foreach($menu as $item) {
+
+            echo "<li>" . $item . "</li>";
+        }
+
+        echo "</ul>";
+
+        ?>
+
+    </div>
+
+</div>
+
+</body>
+</html>

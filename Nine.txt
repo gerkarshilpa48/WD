@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Advertisement Page</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 22px;
+            color: darkred;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Product Advertisement Page</h1>
+
+    <!-- Product Table -->
+
+    <table>
+
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="laptop.jpg" width="120" height="100">
+            </td>
+
+            <td>Laptop</td>
+
+            <td>₹55,000</td>
+
+            <td>
+                <button onclick="showProduct('Laptop')">
+                    Select
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="mobile.jpg" width="120" height="100">
+            </td>
+
+            <td>Mobile</td>
+
+            <td>₹20,000</td>
+
+            <td>
+                <button onclick="showProduct('Mobile')">
+                    Select
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="headphone.jpg" width="120" height="100">
+            </td>
+
+            <td>Headphones</td>
+
+            <td>₹2,500</td>
+
+            <td>
+                <button onclick="showProduct('Headphones')">
+                    Select
+                </button>
+            </td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- Hyperlink -->
+
+    <center>
+        <a href="https://www.amazon.in" target="_blank">
+            Visit Online Shopping Website
+        </a>
+    </center>
+
+    <!-- DOM Manipulation Result -->
+
+    <div class="result" id="displayProduct">
+        Selected Product Will Display Here
+    </div>
+
+</div>
+
+<!-- JavaScript DOM -->
+
+<script>
+
+    function showProduct(productName) {
+
+        document.getElementById("displayProduct").innerHTML =
+        "Selected Product: " + productName;
+
+    }
+
+</script>
+
+</body>
+</html>

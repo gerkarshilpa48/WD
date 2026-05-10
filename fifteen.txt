@@ -1,0 +1,189 @@
+<!-- File Name: gym.php -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Membership Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        .container {
+            width: 450px;
+            background-color: white;
+            margin: auto;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=number],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: darkblue;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+
+        h3 {
+            color: darkred;
+        }
+    </style>
+
+    <script>
+
+        function validateForm() {
+
+            let email = document.forms["gymForm"]["email"].value;
+
+            let mobile = document.forms["gymForm"]["mobile"].value;
+
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+
+                alert("Enter valid email address");
+
+                return false;
+            }
+
+            if (mobile.length != 10 || isNaN(mobile)) {
+
+                alert("Enter valid 10 digit mobile number");
+
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Gym Membership Registration</h2>
+
+    <form name="gymForm" method="POST" onsubmit="return validateForm()">
+
+        <label>Member Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Mobile Number:</label>
+        <input type="text" name="mobile" required>
+
+        <label>Select Membership Plan:</label>
+
+        <select name="plan">
+
+            <option value="1 Month Plan">
+                1 Month Plan
+            </option>
+
+            <option value="3 Months Plan">
+                3 Months Plan
+            </option>
+
+            <option value="1 Year Plan">
+                1 Year Plan
+            </option>
+
+        </select>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $plan = $_POST['plan'];
+
+        $plans = array(
+            "1 Month Plan",
+            "3 Months Plan",
+            "1 Year Plan"
+        );
+
+        echo "<div class='result'>";
+
+        echo "<h3>Membership Details</h3>";
+
+        echo "Member Name: " . $name . "<br>";
+
+        echo "Email: " . $email . "<br>";
+
+        echo "Mobile Number: " . $mobile . "<br>";
+
+        echo "Selected Plan: " . $plan . "<br><br>";
+
+        echo "<b>Available Membership Plans:</b>";
+
+        echo "<ul>";
+
+        foreach($plans as $p) {
+
+            echo "<li>" . $p . "</li>";
+        }
+
+        echo "</ul>";
+
+        echo "</div>";
+    }
+
+    ?>
+
+</div>
+
+</body>
+</html>
